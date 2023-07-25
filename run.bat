@@ -33,7 +33,7 @@ IF ERRORLEVEL 1 (
 
 :: Run the JavaScript code
 echo Running JavaScript code...
-node index.js
+node dist/index.js
 IF ERRORLEVEL 1 (
     echo An error occurred while running the JavaScript code.
     EXIT /B 1

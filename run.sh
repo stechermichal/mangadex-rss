@@ -30,7 +30,7 @@ fi
 
 # Run the JavaScript code
 echo "Running JavaScript code..."
-node index.js
+node dist/index.js
 if [ $? -ne 0 ]; then
     echo "An error occurred while running the JavaScript code."
     exit 1
