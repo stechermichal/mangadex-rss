@@ -1,4 +1,4 @@
-# MangaDex RSS Feed Generator
+# MangaDex-RSS
 
 ## Introduction
 
