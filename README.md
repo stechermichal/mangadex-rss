@@ -1,5 +1,14 @@
 # MangaDex-RSS
 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [How It Works](#how-it-works)
+- [How to Use](#how-to-use)
+  - [Prerequisites](#prerequisites)
+  - [Setup for Windows](#setup-for-windows)
+  - [Setup for Linux](#setup-for-linux)
+
 ## Introduction
 
 The MangaDex-RSS tool exists to simplify the process of creating RSS feed for your followed manga via the MangaDex API and [mdrss-ts](https://github.com/kindlyfire/mdrss-ts).
