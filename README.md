@@ -8,6 +8,7 @@
   - [Prerequisites](#prerequisites)
   - [Setup for Windows](#setup-for-windows)
   - [Setup for Linux](#setup-for-linux)
+- [Known Issues](#known-issues)
 
 ## Introduction
 
@@ -56,3 +57,10 @@ export default {
 2. Open `config.json` and set your MangaDex username and password in the `USERNAME` and `PASSWORD` fields.
 3. You can either just do the next part yourself by running `npx tsc` and then `node dist/index.js` or you can run the `run.sh` file. You do need to set up permissions for the file first, by running `chmod +x run.sh`. 
 4. You can find the URLs in `feedUrlsList.txt`, you can go ahead and paste them into your RSS reader.
+
+
+## Known Issues
+
+This wont work for manga that isn't actually hosted on mangadex, such as Chainsaw Man. This is because the RSS feed is generated from the MangaDex API, which only contains manga hosted on MangaDex. Generally this is the case for the few extremely popular manga that have been licensed in the west and are coming out on regular schedule, in which case the updates page on MD only shows that the chapter came out and links to the official source.
+
+A workaround would be for you to use some other language other than english that is being uploaded on mangadex. Fox example the spanish version of CSM comes is on MD and you could use that to at least get notified.
