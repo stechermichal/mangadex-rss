@@ -35,3 +35,4 @@ IF ERRORLEVEL 1 (
 echo Success! Your feed URLs have been generated.
 
 ENDLOCAL
+pause
