@@ -36,7 +36,7 @@ You need Node.js installed on your system. You can check whether you have these 
 1. Open the start menu and search for `Command Prompt` and open it.
 2. You then need to navigate to the location you want to use for this. You can use the command `chdir` to see where you are, use `cd ..` to go up a folder and `cd <folder name>` to go into a folder.
 3. Once you are in the folder you want to use, you need to clone the repository. You can do this by typing `git clone https://github.com/stechermichal/mangadex-rss.git`.
-4. You can then use the normal file explorer to navigate to the folder and open the `config.json` file. You should be able to use Notepad, if you don't have any other text editor installed.
+4. You can then use the normal file explorer to navigate to the folder and open the `config.ts` file. You should be able to use Notepad, if you don't have any other text editor installed.
 5. You need to change the inside of the single quotes for USERNAME and PASSWORD and enter your MangaDex username and password. When you save the file, it should look something like this:
 ```
 export default {
@@ -54,7 +54,7 @@ export default {
 ### Setup for Linux
 
 1. `git clone https://github.com/stechermichal/mangadex-rss.git`  
-2. Open `config.json` and set your MangaDex username and password in the `USERNAME` and `PASSWORD` fields.
+2. Open `config.ts` and set your MangaDex username and password in the `USERNAME` and `PASSWORD` fields.
 3. You can either just do the next part yourself by running `npx tsc` and then `node dist/index.js` or you can run the `run.sh` file. You do need to set up permissions for the file first, by running `chmod +x run.sh`. 
 4. You can find the URLs in `feedUrlsList.txt`, you can go ahead and paste them into your RSS reader.
 
