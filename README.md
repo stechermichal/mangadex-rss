@@ -1,5 +1,7 @@
 # MangaDex-RSS
 
+**This is currently broken if your account was created past December 2022, or you'be changed password past that date. Unsure if this is fixable yet, it comes from Mangadex changing their API without providing replacement for now.**
+
 ## Table of Contents
 
 - [Introduction](#introduction)
