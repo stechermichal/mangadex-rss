@@ -35,5 +35,3 @@ if [ $? -ne 0 ]; then
     echo "An error occurred while running the JavaScript code."
     exit 1
 fi
-
-echo "Success! Your feed URLs have been generated."

@@ -149,8 +149,10 @@ async function start(): Promise<void> {
         const mangas = await getAllMangaId(token, refreshToken);
         const titles = await fetchAllTitles(mangas);
         generateFeedUrls(mangas, titles);
+        console.log("Success! Your feed URLs have been generated.");
     } catch (error) {
-        console.error(error);
+        console.error("Failed to complete the operation:", error);
+        process.exit(1);
     }
 }
 
