@@ -32,7 +32,5 @@ IF ERRORLEVEL 1 (
     EXIT /B 1
 )
 
-echo Success! Your feed URLs have been generated.
-
 ENDLOCAL
 pause

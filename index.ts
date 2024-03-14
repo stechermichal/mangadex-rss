@@ -14,11 +14,23 @@ interface TokenResponse {
 
 // Function to authenticate the user and get the tokens.
 async function authenticate(): Promise<TokenResponse> {
-    const result = await axios.post(`${CONFIG.MANGA_API}/auth/login`, {
-        username: CONFIG.USERNAME,
-        password: CONFIG.PASSWORD
+    const formData = new URLSearchParams();
+    formData.append('grant_type', 'password');
+    formData.append('username', CONFIG.USERNAME);
+    formData.append('password', CONFIG.PASSWORD);
+    formData.append('client_id', CONFIG.CLIENT_ID);
+    formData.append('client_secret', CONFIG.CLIENT_SECRET);
+
+    const result = await axios.post(`https://auth.mangadex.org/realms/mangadex/protocol/openid-connect/token`, formData.toString(), {
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
     });
-    return { token: result.data.token.session, refreshToken: result.data.token.refresh };
+
+    return {
+        token: result.data.access_token,
+        refreshToken: result.data.refresh_token
+    };
 }
 
 // Function to fetch all Manga IDs and their titles that the user is following. The titles are ultimately not needed for anything,
@@ -137,8 +149,10 @@ async function start(): Promise<void> {
         const mangas = await getAllMangaId(token, refreshToken);
         const titles = await fetchAllTitles(mangas);
         generateFeedUrls(mangas, titles);
+        console.log("Success! Your feed URLs have been generated.");
     } catch (error) {
-        console.error(error);
+        console.error("Failed to complete the operation:", error);
+        process.exit(1);
     }
 }
 
